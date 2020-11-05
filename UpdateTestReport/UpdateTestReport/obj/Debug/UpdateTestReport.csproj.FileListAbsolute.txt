@@ -1,0 +1,8 @@
+D:\CI_Jenkins\Read_Report\UpdateTestReport\UpdateTestReport\bin\Debug\UpdateTestReport.exe.config
+D:\CI_Jenkins\Read_Report\UpdateTestReport\UpdateTestReport\bin\Debug\UpdateTestReport.exe
+D:\CI_Jenkins\Read_Report\UpdateTestReport\UpdateTestReport\bin\Debug\UpdateTestReport.pdb
+D:\CI_Jenkins\Read_Report\UpdateTestReport\UpdateTestReport\obj\Debug\UpdateTestReport.csprojAssemblyReference.cache
+D:\CI_Jenkins\Read_Report\UpdateTestReport\UpdateTestReport\obj\Debug\UpdateTestReport.csproj.ResolveComReference.cache
+D:\CI_Jenkins\Read_Report\UpdateTestReport\UpdateTestReport\obj\Debug\UpdateTestReport.csproj.CoreCompileInputs.cache
+D:\CI_Jenkins\Read_Report\UpdateTestReport\UpdateTestReport\obj\Debug\UpdateTestReport.exe
+D:\CI_Jenkins\Read_Report\UpdateTestReport\UpdateTestReport\obj\Debug\UpdateTestReport.pdb
