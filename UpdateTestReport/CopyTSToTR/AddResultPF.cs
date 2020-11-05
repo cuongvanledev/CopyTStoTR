@@ -32,7 +32,7 @@ namespace UpdateTestReport.CopyTSToTR
                     if("Cover" == sheetName.Name)
                     {
                         // Fill documnet number in Cover sheet
-                        sheetName.Cells[3, 8] = tr.TestRe[module][newFile];
+                        //sheetName.Cells[3, 8] = tr.TestRe[module][newFile];
                         for (int i = 4; i < 10; i++)
                         {
                             // Fill documnet name in Cover sheet
