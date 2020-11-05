@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using UpdateTestReport.Repo.Constant;
 using System.Text.RegularExpressions;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace UpdateTestReport.CopyTSToTR
 {
@@ -35,7 +37,7 @@ namespace UpdateTestReport.CopyTSToTR
                 {
                     File.Copy(ws.wsTP + "U2x\\" + file, ws.wsTR + file, true);
                 }
-                Console.WriteLine("New File: " + file);
+                //Console.WriteLine("New File: " + file);
                 
             }
         }
@@ -46,11 +48,39 @@ namespace UpdateTestReport.CopyTSToTR
 
             foreach (string file in TestRe.Keys)
             {
-                File.Delete(ws.wsTR + file);
+                if (File.Exists(ws.wsTR + file))
+                {
+                   // closeFile(ws.wsTR + file);
+                    File.Delete(ws.wsTR + file);
+                }
             }
             return 0;
         }
 
+
+        protected bool closeFile(FileInfo file)
+        {
+            FileStream stream = null;
+
+            try
+            {
+                stream = file.Open(FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+            }
+            catch (IOException)
+            {
+                //the file is unavailable because it is:
+                //still being written to
+                //or being processed by another thread
+                //or does not exist (has already been processed)
+                return true;
+            }
+            finally
+            {
+                if (stream != null)
+                    stream.Close();
+            }
+            return false;
+        }
 
     }
 }

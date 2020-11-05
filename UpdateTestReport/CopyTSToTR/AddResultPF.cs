@@ -25,7 +25,7 @@ namespace UpdateTestReport.CopyTSToTR
                 Console.WriteLine("===================================");
                 Workbook wb = excel.Workbooks.Open(ws.wsTR + file);
                 string newFile = file.Replace("TS", "TR").Replace(".xlsm", "_U2A8_Beta.xlsm");
-                Console.WriteLine("DANG LAM O FILE: " + newFile);
+                Console.WriteLine("Working at FILE: " + newFile);
                 //Worksheet sheetNames = wb.Worksheets;
                 foreach (Worksheet sheetName in wb.Worksheets)
                 {
@@ -46,7 +46,7 @@ namespace UpdateTestReport.CopyTSToTR
                     }
                     else if (Regex.Match(sheetName.Name, @"^\d+").Success)
                     {
-                        Console.WriteLine("Sheet: " + sheetName.Name);
+                        //Console.WriteLine("Sheet: " + sheetName.Name);
                         //find Test Result collum
                         for (int i = 7; i <= 15; i++)
                         {
@@ -55,7 +55,11 @@ namespace UpdateTestReport.CopyTSToTR
                             if(Regex.Match(valueColumn, @"Test Result").Success)
                             {
                                 int index = 12;
-                                while(true)
+                                if (!String.IsNullOrEmpty(sheetName.Cells[11, 3].Value))
+                                {
+                                    Console.WriteLine("[!]Row 11 should be not used in sheet: " + sheetName.Name + " of file: " + newFile);
+                                }
+                                while (true)
                                 {
                                     string TCID = sheetName.Cells[index, 2].Value;
                                     if(!String.IsNullOrEmpty(TCID))
@@ -90,9 +94,14 @@ namespace UpdateTestReport.CopyTSToTR
         {
             TestPlan ts = new TestPlan();
             WorkSpace ws = new WorkSpace(module);
+            TestReport tr = new TestReport(module);
             foreach (string file in ts.TestSpec[module])
             {
-                File.Delete( ws.wsTR + file);
+                if (File.Exists(ws.wsTR + file))
+                {
+                   // tr.closeFile(ws.wsTR + file);
+                    File.Delete(ws.wsTR + file);
+                }
             }
             
         }

@@ -14,16 +14,23 @@ namespace UpdateTestReport
         {
             if (args.Length == 0)
             {
-                Console.WriteLine("Please update Path");
-                //return;
+                Console.WriteLine("Please update module");
+                Console.ReadKey();
+                return;
             }
-
-            TestReport ts = new TestReport("spi");
-            ts.removeOldTestResult("spi");
-            ts.copyTSToTR("spi");
+           
+            string module = args[0].ToLower();
+            Console.WriteLine("Module: " + module);
+            TestReport ts = new TestReport(module);
             AddResultPF T = new AddResultPF();
-            T.addRS("spi");
-            //Console.ReadKey();
+
+            ts.removeOldTestResult(module);
+            //T.removeFile(module);
+            ts.copyTSToTR(module);
+            
+            T.addRS(module);
+            Console.WriteLine("==================== DONE =================");
+            Console.ReadKey();
         }
 
         

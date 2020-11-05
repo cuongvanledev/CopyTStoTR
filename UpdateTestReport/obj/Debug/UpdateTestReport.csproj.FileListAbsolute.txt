@@ -1,0 +1,7 @@
+D:\CI_Jenkins\CopyTS_Beta\CopyTStoTR\UpdateTestReport\bin\Debug\UpdateTestReport.exe.config
+D:\CI_Jenkins\CopyTS_Beta\CopyTStoTR\UpdateTestReport\bin\Debug\UpdateTestReport.exe
+D:\CI_Jenkins\CopyTS_Beta\CopyTStoTR\UpdateTestReport\bin\Debug\UpdateTestReport.pdb
+D:\CI_Jenkins\CopyTS_Beta\CopyTStoTR\UpdateTestReport\obj\Debug\UpdateTestReport.csproj.ResolveComReference.cache
+D:\CI_Jenkins\CopyTS_Beta\CopyTStoTR\UpdateTestReport\obj\Debug\UpdateTestReport.csproj.CoreCompileInputs.cache
+D:\CI_Jenkins\CopyTS_Beta\CopyTStoTR\UpdateTestReport\obj\Debug\UpdateTestReport.exe
+D:\CI_Jenkins\CopyTS_Beta\CopyTStoTR\UpdateTestReport\obj\Debug\UpdateTestReport.pdb
